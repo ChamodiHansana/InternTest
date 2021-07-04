@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from django.conf.urls import url,include
+from rest_framework.authtoken.views import ObtainAuthToken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    url(r'^', include('User.urls')),
     url(r'^', include('Customer.urls'))
 ]
